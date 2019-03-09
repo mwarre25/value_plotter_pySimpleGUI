@@ -144,4 +144,4 @@ likelihood Task Likelihood Score (1-5)           5                              
 Note: The Value score is computed within the software according to the following 
 lookup table: 
 
-.. image:: _static/valueLookup.png
+.. image:: valueLookup.png
