@@ -104,42 +104,38 @@ test_task_list contains a table with an example task.
 Field List - test_taask_list.xlsx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-========= ============== ======================================================= ============
-Field     Description    Example                                                 Required
-========= ============== ======================================================= ============
-prog_num  Program Number 34                                                      Yes
-prog_name Program Name   Transmission Asset Management Analytics                 Yes
-proj_num  Project Number P34.002                                                 Yes
-proj_name Project Name   Substations Asset Analytics                             Yes
-task      Task Name      Industrywide Transformer Failure & Performance Database Yes
-========= ============== ======================================================= ============
+========= ============== ========================= ========
+Field     Description    Example                   Required
+========= ============== ========================= ========
+prog_num  Program Number P1                        Yes
+prog_name Program Name   Data Tools                Yes
+proj_num  Project Number P1.001                    Yes
+proj_name Project Name   Value Tool                Yes
+task      Task Name      Add Value Tool to Github  Yes
+========= ============== ======================== ========
 
 test_respondent_list
 ~~~~~~~~~~~~~~~~~~~~
-
 test_respondent_list.xlsx contains a table of a test response for the test task.
 
 Field List - test_respondent_list.xlsx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-========== ===================================== ======================================================== ============
-Field      Description                           Example                                                  Required
-========== ===================================== ======================================================== ============
-first_name First name of attendee                Mike                                                     No
-last_name  Last name of attendee                 Warren                                                   No
-company    Utility Name                          EPRI                                                     Yes
-email      Respondent Email Address              mwarren@epri.com                                         Yes
-title      Attendee's job title                  Engineer                                                 No
-prog_num   Program Number                        34                                                       Yes
-prog_name  Program Name                          Transmission Asset Management Analytics                  Yes
-proj_num   Project Number                        P34.002                                                  Yes
-proj_name  Project Name                          Substations Asset Analytics                              Yes
-task       Task Name                             Industrywide Transformer Failure & Performance Database  Yes
-usability  Task Usability Score (1-5)            3                                                        Yes
-roi        Task Return on Investment Score (1-5) 4                                                        Yes
-relevance  Task Relevance Score (1-5)            2                                                        Yes
-likelihood Task Likelihood Score (1-5)           5                                                        Yes
-========== ===================================== ======================================================== ============
+========== ===================================== ======================== ========
+Field      Description                           Example                  Required
+========== ===================================== ======================== ========
+company    Company Name                          mikewarrenee             Yes
+email      Respondent Email Address              mwarre25@gmailom         Yes
+prog_num   Program Number                        P1                       Yes
+prog_name  Program Name                          Data Tools               Yes
+proj_num   Project Number                        P1.001                   Yes
+proj_name  Project Name                          Value Tool               Yes
+task       Task Name                             Add Value Tool to Github Yes
+usability  Task Usability Score (1-5)            3                        Yes
+roi        Task Return on Investment Score (1-5) 4                        Yes
+relevance  Task Relevance Score (1-5)            2                        Yes
+likelihood Task Likelihood Score (1-5)           5                        Yes
+========== ===================================== ======================== ========
 
 Note: The Value score is computed within the software according to the following 
 lookup table: 
