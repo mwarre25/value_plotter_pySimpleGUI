@@ -125,7 +125,7 @@ Field List - test_respondent_list.xlsx
 Field      Description                           Example                  Required
 ========== ===================================== ======================== ========
 company    Company Name                          mikewarrenee             Yes
-email      Respondent Email Address              mwarre25@gmailom         Yes
+email      Respondent Email Address              mwarre25@gmail.com         Yes
 prog_num   Program Number                        P1                       Yes
 prog_name  Program Name                          Data Tools               Yes
 proj_num   Project Number                        P1.001                   Yes
