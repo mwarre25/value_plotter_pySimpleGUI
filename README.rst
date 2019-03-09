@@ -1,4 +1,5 @@
-# Value Tool Documentation
+Value Tool Documentation
+========================
 
 The value tool is a bubble chart plotter using PySimpleGUI and pandas.
 
@@ -16,8 +17,8 @@ each on a 1-5 integer scale.
 
 
 
-
-## Quickstart
+Quickstart
+----------
 
 1. Run value_tool.py
 2. A splash screen will appear.
@@ -84,10 +85,24 @@ each on a 1-5 integer scale.
 19. To load new datasets use the 'Start Over' button. This will restart the program at the splash screen.
 20. To exit the program use the 'Exit' button.
 
-## Installation
+Installation
+------------
 
-## Schema
+Schema
+------
+Two files are included with the executable file 'value_tool_2019.exe'.
+These files are:
 
-### test_task_list
+    * test_task_list.xlsx
+    * test_respondent_list.xlsx
 
-### test_respondent_list
+test_task_list
+~~~~~~~~~~~~~~
+
+test_task_list contains a table with an example task.
+
+Field List - test_taask_list.xlsx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_respondent_list
+~~~~~~~~~~~~~~~~~~~~
