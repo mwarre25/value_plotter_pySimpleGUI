@@ -1,5 +1,5 @@
-Value Tool Documentation
-========================
+Value Tool
+==========
 
 The value tool is a bubble chart plotter using PySimpleGUI and pandas.
 
