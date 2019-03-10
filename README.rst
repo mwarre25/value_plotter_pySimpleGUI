@@ -1,6 +1,8 @@
 Value Tool
 ==========
 
+.. image:: gif.gif
+
 The value tool is a bubble chart plotter using PySimpleGUI and pandas.
 
 It takes as input a list of tasks (with program, project and task for my original purposes for the software) and a list of
