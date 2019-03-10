@@ -3,7 +3,9 @@ Value Tool
 
 .. image:: gif.gif
 
-The value tool is a bubble chart plotter using PySimpleGUI and pandas.
+The value tool is a bubble chart plotter using PySimpleGUI_ and pandas.
+
+.. _PySimpleGUI: https://github.com/PySimpleGUI/PySimpleGUI
 
 It takes as input a list of tasks (with program, project and task for my original purposes for the software) and a list of
 respondents who rank the tasks on four metrics.
