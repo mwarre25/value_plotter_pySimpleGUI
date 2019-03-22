@@ -145,3 +145,10 @@ Note: The Value score is computed within the software according to the following
 lookup table: 
 
 .. image:: valueLookup.png
+
+Future Plans
+------------
+  * Fill a cell in xlsx output with bubble color for respondent
+  * Output a master workbook with all responses for all tasks
+  * Output a PowerPoint of plots and tables
+  * OCR input from PDFs
