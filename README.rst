@@ -36,9 +36,6 @@ Quickstart
 
 4. Select 'OK'.
 5. An 'Open' file dialog will appear.
-
-.. image:: open_file_dialog.png
-
 6. Select 'test_task_list.xlsx' or a file with the same schema.
 7. Next, the prompt, "Load Respondent List' will appear prompting you to
 "Now select a .xlsx file with attendee information in the following schema:
