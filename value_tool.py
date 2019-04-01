@@ -240,6 +240,12 @@ def Respondent_Tbl():
     att_df["relevance"] = att_df["relevance"].astype("int")
     att_df["likelihood"] = att_df["likelihood"].astype("int")
 
+    val_list = []
+    for _, row in att_df.iterrows():
+        val_list.append(value_lookup((row["roi"], row["relevance"])))
+
+    att_df["value"] = val_list
+
     att_df = att_df.groupby(["task", "company", "proj_num", "proj_name"]).agg(
         {
             "usability": "mean",
@@ -247,22 +253,15 @@ def Respondent_Tbl():
             "relevance": "mean",
             "likelihood": "mean",
             "company": "count",
+            "value": 'mean'
         }
     )
 
     att_df.rename(index=str, columns={
                   "company": "respondent_count"}, inplace=True)
     att_df.reset_index(inplace=True)
-    att_df = att_df.round(0)
+    att_df = att_df.round(2)
 
-    for col in ["usability", "roi", "relevance", "likelihood"]:
-        att_df[col] = att_df[col].astype("int")
-
-    val_list = []
-    for _, row in att_df.iterrows():
-        val_list.append(value_lookup((row["roi"], row["relevance"])))
-
-    att_df["value"] = val_list
     return att_df
 
 
