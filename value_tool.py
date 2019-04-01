@@ -125,16 +125,13 @@ def Task_Tbl():
     if filename is not None:
         try:
             task_df = pd.read_excel(filename)
-            while list(task_df.columns) != ['prog_num',
-                                            'prog_name',
-                                            'proj_num',
-                                            'proj_name',
-                                            'task']:
-                sg.PopupError(
-                    "Make sure you've selected the correct table"
-                )
-                filename = get_xlsx()
-                task_df = pd.read_excel(filename)
+            for name in ['prog_num', 'prog_name', 'proj_num', 'proj_name', 'task']:
+                if name not in task_df.columns:
+                    sg.PopupError(
+                        "Make sure you've selected the correct table"
+                    )
+                    filename = get_xlsx()
+                    task_df = pd.read_excel(filename)
         except Exception as e:
             sg.PopupError(
                 "Error reading file:\n" +
@@ -221,22 +218,13 @@ def Respondent_Tbl():
     if filename is not None:
         try:
             att_df = pd.read_excel(filename)
-            while list(att_df.columns) != ['company',
-                                           'email',
-                                           'prog_num',
-                                           'prog_name',
-                                           'proj_num',
-                                           'proj_name',
-                                           'task',
-                                           'usability',
-                                           'roi',
-                                           'relevance',
-                                           'likelihood']:
-                sg.PopupError(
-                    "Make sure you've selected the correct table"
-                )
-                filename = get_xlsx()
-                att_df = pd.read_excel(filename)
+            for name in ['company', 'email', 'prog_num', 'prog_name', 'proj_num', 'proj_name', 'task', 'usability', 'roi', 'relevance', 'likelihood']:
+                if name not in att_df.columns:
+                    sg.PopupError(
+                        "Make sure you've selected the correct table"
+                    )
+                    filename = get_xlsx()
+                    att_df = pd.read_excel(filename)
         except Exception as e:
             sg.PopupError("Error reading file:" + str(e))
             sys.exit(69)
@@ -246,6 +234,7 @@ def Respondent_Tbl():
     except Exception as e:
         sg.Popup("Problem loading data")
 
+    att_df.dropna(inplace=True)
     att_df["usability"] = att_df["usability"].astype("int")
     att_df["roi"] = att_df["roi"].astype("int")
     att_df["relevance"] = att_df["relevance"].astype("int")
