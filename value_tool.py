@@ -19,7 +19,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasAgg
 import os.path
 import sys
 
-f_size = 12
+f_size = 18
 now = dt.datetime.now().strftime("%Y-%m-%d_%I%M%p").upper()
 plt.style.use("ggplot")
 
@@ -320,9 +320,9 @@ def Chrt_Menu(groups):
         plt.ylabel("Average Value", fontsize=f_size)
         if isinstance(name, tuple):
             fig.suptitle(name[0] + "\n" +
-                         "\n".join(wrap(name[1])), fontsize=f_size)
+                         "\n".join(wrap(name[1])), fontsize=f_size-3)
         else:
-            fig.suptitle("\n".join(wrap(name)), fontsize=f_size)
+            fig.suptitle("\n".join(wrap(name)), fontsize=f_size-3)
 
         return fig, colors
 
