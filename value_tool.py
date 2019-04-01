@@ -623,6 +623,94 @@ def Chrt_Menu(groups):
             except Exception as e:
                 print(str(e))
 
+        def append_all_tbls(name, group):
+            appended_df = pd.DataFrame()
+            for name, group in groups:
+                try:
+                    group_list = group.company.values.tolist()
+                    group_color_list = []
+                    for grp_name, col in zip(group_list, colors):
+                        col_mapped = col * 255
+                        col_mapped = col_mapped.round(0)
+                        col_mapped = [int(i) for i in col_mapped]
+                        col_mapped_hex = '#%02x%02x%02x' % (col_mapped[0],
+                                                            col_mapped[1],
+                                                            col_mapped[2])
+
+                        group_color_list.append([grp_name,
+                                                 col_mapped[:3],
+                                                 col_mapped_hex])
+
+                    group_color_df = pd.DataFrame(
+                        group_color_list, columns=["company",
+                                                   "bubble_color_rgb",
+                                                   "bubble_color_hex"]
+                    )
+
+                    save_tbl_name = (name[0].replace("[^a-zA-Z]", "_")
+                                     .replace('&', '')
+                                     .replace("(", "")
+                                     .replace(")", "")
+                                     .replace(": ", "_")
+                                     .replace("-", "")
+                                     .replace(" / ", "_")
+                                     .replace(" ", "_")
+                                     .replace(":", "_")
+                                     .replace(".", "_")
+                                     .lower()[:30] + '.xlsx')
+
+                    all_plot_data_df = pd.merge(
+                        group, group_color_df, how="left", on="company")
+                    all_plot_data_df = all_plot_data_df.rename(
+                        index=str,
+                        columns={
+                            "prog_num": "Program Number",
+                            "prog_name": "Program Name",
+                            "proj_num": "Project Number",
+                            "proj_name": "Project Name",
+                            "task": "Task Name",
+                            "company": "Utility",
+                            "respondent_count": "Respondent Count",
+                            "usability": "Average Usability",
+                            "roi": "Average ROI",
+                            "relevance": "Average Relevance",
+                            "likelihood": "Average Likelihood",
+                            "value": "Average Value",
+                            "bubble_color_rgb": "Bubble Color [R, G, B]",
+                            "bubble_color_hex": "Bubble Color Hex",
+                        },
+                    )
+
+                    all_plot_data_df = all_plot_data_df[
+                        [
+                            "Program Number",
+                            "Program Name",
+                            "Project Number",
+                            "Project Name",
+                            "Task Name",
+                            "Utility",
+                            "Respondent Count",
+                            "Average Usability",
+                            "Average ROI",
+                            "Average Relevance",
+                            "Average Likelihood",
+                            "Average Value",
+                            "Bubble Color [R, G, B]",
+                            "Bubble Color Hex"
+                        ]
+                    ]
+                    
+                except Exception as e:
+                    print(str(e))
+                appended_df = appended_df.append(all_plot_data_df, ignore_index=True)
+            save_tbl_name = 'all_data.xlsx'
+
+            writer = pd.ExcelWriter(save_tbl_name,
+                                    engine='xlsxwriter')
+            appended_df.to_excel(writer,
+                                 index=False)
+            writer.save()
+
         def save_all_figs_and_tbls():
             i = 0
             for name, group in groups:
@@ -649,6 +737,7 @@ def Chrt_Menu(groups):
                                         max_value=len(groups),
                                         key='progress')
                 i += 1
+            append_all_tbls(name, group)
 
         if event is None or event is "Exit":
             break
