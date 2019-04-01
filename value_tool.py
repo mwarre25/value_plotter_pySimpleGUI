@@ -303,7 +303,7 @@ def Chrt_Menu(groups):
         N = len(group)
 
         # need qualitative colormap
-        cmap = cm.get_cmap('prism')
+        cmap = cm.get_cmap('nipy_spectral')
         colors = cmap(np.linspace(0, 1, N))
 
         # Use those colors as the color argument
