@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/mwarre25/value_tool.svg?branch=master
+    :target: https://travis-ci.org/mwarre25/value_tool
+
 Value Tool
 ==========
 
