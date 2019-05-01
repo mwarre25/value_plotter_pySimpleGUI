@@ -1,5 +1,4 @@
 datetime
-inspect
 os
 re
 sys
