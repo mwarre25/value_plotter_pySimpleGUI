@@ -5,8 +5,8 @@ re
 sys
 time
 tkinter
-pathlib import Path
-textwrap import wrap
+pathlib
+textwrap
 
 matplotlib
 matplotlib.backends.tkagg
