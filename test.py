@@ -10,7 +10,7 @@ class TestResourcePath(unittest.TestCase):
         """
         pass
 
-
+# this test doesn't work because of tKinter I think
 # class TestSplash(unittest.TestCase):
 #     def test_splash_screen(self):
 #         """
