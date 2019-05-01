@@ -1,5 +1,4 @@
 import unittest
-
 import value_tool
 
 
@@ -11,7 +10,7 @@ class TestResourcePath(unittest.TestCase):
         pass
 
 
-# this test doesn't work because of tKinter I think
+# this test doesn't work because of tKinter I think https://bit.ly/2XYLzP8
 # class TestSplash(unittest.TestCase):
 #     def test_splash_screen(self):
 #         """
