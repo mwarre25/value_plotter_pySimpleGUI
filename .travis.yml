@@ -1,0 +1,8 @@
+language: python
+sudo: true
+install:
+  - pip install -r requirements.txt
+dist: xenial
+python: 3.6
+script:
+  - python -m unittest discover

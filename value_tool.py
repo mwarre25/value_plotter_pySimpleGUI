@@ -32,7 +32,6 @@ def resource_path(relative_path):
         os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
-
 # WELCOME_PIC = resource_path('vt_welcome.png')
 # TASK_LIST_PIC = resource_path('ppt_lst_csv_ex.png')
 # RESP_LIST_PIC = resource_path('att_lst_csv_ex.png')
@@ -53,7 +52,7 @@ def Splash():
     Splash screen
     '''
     layout = [[sg.Image(WELCOME_PIC, pad=(0, 0))]]
-    sg.Window(
+    window = sg.Window(
         "Value Tool",
         auto_close_duration=3,
         auto_close=True,
@@ -61,11 +60,12 @@ def Splash():
         size=(500, 360),
         no_titlebar=True,
     ).Layout(layout).Read()
+    return layout
 
 
 def Directions_Task_Tbl():
     '''
-    Instruction prompt for importing ask list
+    Instruction prompt for importing task list
     '''
     layout = [
         [
@@ -98,7 +98,8 @@ def Directions_Task_Tbl():
             break
         elif event is "Exit":
             return True
-
+    return layout
+ 
 
 def get_xlsx():
     '''
