@@ -1,4 +1,4 @@
 language: python
-sudo: required
+sudo: true
 dist: xenial
-python: "3.7"
+python: 3.7
