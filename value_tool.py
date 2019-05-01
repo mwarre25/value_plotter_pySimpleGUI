@@ -32,7 +32,6 @@ def resource_path(relative_path):
         os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
-
 # WELCOME_PIC = resource_path('vt_welcome.png')
 # TASK_LIST_PIC = resource_path('ppt_lst_csv_ex.png')
 # RESP_LIST_PIC = resource_path('att_lst_csv_ex.png')
@@ -101,7 +100,6 @@ def Directions_Task_Tbl():
             return True
     return layout
  
-
 
 def get_xlsx():
     '''
